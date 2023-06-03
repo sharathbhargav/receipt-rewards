@@ -1,19 +1,21 @@
 package com.simple.rest.rewards.entity;
 
-import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 import java.io.Serializable;
 
-@Embeddable
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
 public class Items implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String shortDescription;
 
     private double price;

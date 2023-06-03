@@ -24,6 +24,7 @@ public class Receipt {
     private Long id;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "receipt_id")
     private List<Items> items;
 
     private String retailer;
